@@ -1,569 +1,1003 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shaina Reign M. Coloma | My Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shai's Creative Journey</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
 
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background-color: #FFFAF7;
-            color: #574957;
-            line-height: 1.7;
-        }
+:root {
+  --pink: #d88f9e;
+  --dark: #49343a;
+  --cream: #fffaf7;
+  --muted: #806c70;
+}
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
 
-        header {
-            background: linear-gradient(135deg, #F8E2E5, #FFF1C9);
-            text-align: center;
-            padding: 28px 20px;
-            position: relative;
-            overflow: hidden;
-        }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--dark);
+  line-height: 1.7;
+}
 
-        header::before {
-            content: "✦";
-            position: absolute;
-            top: 25px;
-            left: 12%;
-            font-size: 30px;
-            color: #D6A6AE;
-        }
+.container {
+  width: min(1120px, 90%);
+  margin: auto;
+}
 
-        header::after {
-            content: "✧";
-            position: absolute;
-            bottom: 25px;
-            right: 12%;
-            font-size: 38px;
-            color: #D6A6AE;
-        }
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,250,247,.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #f0dfe1;
+}
 
-        header h1 {
-            font-size: 1.65rem;
-            color: #805C6B;
-            margin-bottom: 5px;
-        }
+nav {
+  min-height: 76px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+}
 
-        header p {
-            color: #795F68;
-            font-size: 0.9rem;
-        }
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 23px;
+  font-weight: 700;
+  color: var(--dark);
+  text-decoration: none;
+}
 
-        .tagline {
-            font-style: italic;
-            margin-top: 7px;
-        }
+.logo span {
+  color: var(--pink);
+}
 
-        .profile-name {
-            text-align: center;
-            color: #805C6B;
-            font-size: 1.5rem;
-            margin: 8px 0 22px;
-        }
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
 
-        nav {
-            background-color: #FFF8F1;
-            padding: 16px 10px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 3px 10px rgba(100, 70, 80, 0.08);
-        }
+.nav-links a {
+  color: var(--dark);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  transition: .3s;
+}
 
-        nav a {
-            display: inline-block;
-            margin: 5px 13px;
-            color: #805C6B;
-            font-weight: 600;
-            transition: 0.3s;
-        }
+.nav-links a:hover {
+  color: var(--pink);
+}
 
-        nav a:hover {
-            color: #C18A95;
-        }
+.nav-button, .button {
+  display: inline-block;
+  background: var(--pink);
+  color: white;
+  text-decoration: none;
+  padding: 12px 22px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 700;
+  border: none;
+  transition: .3s;
+  cursor: pointer;
+}
 
-        main {
-            max-width: 1000px;
-            margin: auto;
-            padding: 25px 20px;
-        }
+.nav-button:hover, .button:hover {
+  background: var(--dark);
+  transform: translateY(-3px);
+}
 
-        section {
-            background-color: #FFFFFF;
-            margin: 30px 0;
-            padding: 35px;
-            border-radius: 16px;
-            box-shadow: 0 4px 18px rgba(100, 70, 80, 0.06);
-        }
+.menu-toggle {
+  display: none;
+  border: none;
+  background: none;
+  color: var(--dark);
+  font-size: 27px;
+  cursor: pointer;
+}
 
-        section h2 {
-            color: #A46E7A;
-            margin-bottom: 20px;
-            padding-bottom: 8px;
-            border-bottom: 3px solid #F8E5B5;
-        }
+.hero {
+  padding: 95px 0;
+  background: linear-gradient(120deg, #fffaf7, #f9e9eb);
+}
 
-        section p {
-            margin-bottom: 12px;
-        }
+.hero-card {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  align-items: center;
+  gap: 65px;
+}
 
-        .profile-image {
-            display: block;
-            width: 180px;
-            height: 180px;
-            object-fit: cover;
-            object-position: center;
-            margin: 20px auto;
-            border-radius: 50%;
-            border: 5px solid #F8E4E5;
-            box-shadow: 0 5px 15px rgba(100, 70, 80, 0.12);
-        }
+.eyebrow {
+  color: var(--pink);
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
 
-        .skill-list {
-            padding-left: 25px;
-            margin-bottom: 20px;
-        }
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(48px, 7vw, 76px);
+  line-height: 1.1;
+  margin: 18px 0;
+}
 
-        .skill-list li {
-            margin-bottom: 7px;
-        }
+.hero h1 em {
+  color: var(--pink);
+  font-style: normal;
+}
 
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 15px;
-        }
+.hero-lead {
+  color: var(--muted);
+  max-width: 500px;
+  margin-bottom: 25px;
+}
 
-        .skill-tags span {
-            background-color: #F8E5E9;
-            color: #805C6B;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 14px;
-            transition: 0.3s;
-        }
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
 
-        .skill-tags span:hover {
-            background-color: #FFF0C9;
-        }
+.button.secondary {
+  background: transparent;
+  color: var(--dark);
+  border: 1px solid #d9b9bf;
+}
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-        }
+.button.secondary:hover {
+  background: var(--dark);
+  color: white;
+}
 
-        th, td {
-            border: 1px solid #F0DDE1;
-            padding: 13px;
-            text-align: left;
-        }
+.hero-note {
+  margin-top: 30px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--muted);
+}
 
-        th {
-            background-color: #F8E5E9;
-            color: #805C6B;
-        }
+.portrait-wrap {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
 
-        tr:nth-child(even) {
-            background-color: #FFFAF7;
-        }
+.portrait-frame {
+  width: min(370px, 100%);
+  padding: 12px;
+  background: white;
+  border: 1px solid #efd9dc;
+  border-radius: 48% 48% 45% 45%;
+  box-shadow: 0 20px 55px rgba(104,66,76,.15);
+}
 
-        .project-card {
-            background-color: #FFFAF7;
-            padding: 20px;
-            margin: 18px 0;
-            border-radius: 12px;
-            border-left: 5px solid #F1D58D;
-            transition: 0.3s;
-        }
+.portrait-inner {
+  width: 100%;
+  aspect-ratio: .78;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #f4e2e5;
+}
 
-        .project-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 5px 15px rgba(100, 70, 80, 0.08);
-        }
+.portrait-inner img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 28%;
+}
 
-        .project-card h3 {
-            color: #A46E7A;
-            margin-bottom: 8px;
-        }
+.floating-label {
+  position: absolute;
+  bottom: 20px;
+  right: -5px;
+  background: white;
+  color: var(--pink);
+  padding: 12px 18px;
+  border-radius: 30px;
+  box-shadow: 0 8px 25px rgba(0,0,0,.08);
+  font-size: 12px;
+  font-weight: 700;
+}
 
-        .goals-list {
-            padding-left: 25px;
-        }
+.section {
+  padding: 90px 0;
+}
 
-        .goals-list li {
-            margin-bottom: 10px;
-        }
+.soft-section {
+  background: #fff1f1;
+}
 
-        .contact-info a {
-            color: #B77E8B;
-            font-weight: 600;
-        }
+.section-heading {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 45px;
+}
 
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
+.section-heading h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 5vw, 45px);
+  margin: 10px 0;
+}
 
-        form {
-            background-color: #FFFAF7;
-            padding: 20px;
-            border-radius: 12px;
-            margin-top: 20px;
-        }
+.section-heading p {
+  color: var(--muted);
+  font-size: 14px;
+}
 
-        label {
-            display: block;
-            margin: 12px 0 5px;
-            font-weight: 600;
-            color: #805C6B;
-        }
+.about-grid {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  align-items: center;
+  gap: 65px;
+}
 
-        input, textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #E8CDD3;
-            border-radius: 8px;
-            font-family: inherit;
-            font-size: 14px;
-            background-color: #FFFFFF;
-        }
+.about-art {
+  min-height: 330px;
+  padding: 40px;
+  border-radius: 180px 180px 25px 25px;
+  background: linear-gradient(145deg, #eac1c8, #f8e8e8);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
 
-        input:focus, textarea:focus {
-            outline: 2px solid #F1D58D;
-            border-color: #C18A95;
-        }
+.art-label {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #805b64;
+  margin-bottom: 12px;
+}
 
-        textarea {
-            resize: vertical;
-        }
+.about-art strong {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  line-height: 1.3;
+  color: var(--dark);
+}
 
-        button {
-            margin-top: 15px;
-            padding: 11px 25px;
-            background-color: #BD8491;
-            color: white;
-            border: none;
-            border-radius: 25px;
-            font-size: 15px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+.about-copy p {
+  margin: 15px 0;
+  color: var(--muted);
+  font-size: 14px;
+}
 
-        button:hover {
-            background-color: #A46E7A;
-        }
+.about-copy .button {
+  margin-top: 15px;
+}
 
-        footer {
-            background: linear-gradient(135deg, #F8E2E5, #FFF1C9);
-            text-align: center;
-            padding: 40px 20px;
-            color: #795F68;
-            margin-top: 40px;
-        }
+.skills-grid, .projects-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
 
-        footer h2 {
-            color: #805C6B;
-            margin-bottom: 12px;
-        }
+.skill-card, .project-card {
+  background: white;
+  border: 1px solid #f0dfe1;
+  padding: 27px;
+  border-radius: 18px;
+  transition: .3s;
+}
 
-        footer h3 {
-            margin: 18px 0;
-            color: #966675;
-        }
+.skill-card:hover, .project-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 15px 35px rgba(104,66,76,.1);
+}
 
-        footer p {
-            margin: 8px 0;
-        }
+.skill-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  background: #fae9eb;
+  color: var(--pink);
+  border-radius: 15px;
+  font-size: 23px;
+  margin-bottom: 18px;
+}
 
-        footer a {
-            color: #805C6B;
-            font-weight: 600;
-        }
+.skill-card h3, .project-card h3 {
+  font-size: 17px;
+  margin-bottom: 10px;
+}
 
-        footer a:hover {
-            text-decoration: underline;
-        }
+.skill-card p, .project-card p {
+  color: var(--muted);
+  font-size: 13px;
+}
 
-        @media (max-width: 600px) {
-            header {
-                padding: 22px 15px;
-            }
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 35px;
+}
 
-            header h1 {
-                font-size: 1.4rem;
-            }
+.tag {
+  background: white;
+  border: 1px solid #edd7dc;
+  padding: 8px 15px;
+  border-radius: 25px;
+  font-size: 12px;
+  color: var(--muted);
+}
 
-            nav a {
-                margin: 5px 8px;
-                font-size: 14px;
-            }
+.education-card {
+  max-width: 750px;
+  margin: auto;
+  padding: 28px;
+  background: white;
+  border: 1px solid #f0dfe1;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 10px 30px rgba(104,66,76,.06);
+}
 
-            section {
-                padding: 22px;
-            }
+.edu-mark {
+  width: 55px;
+  height: 55px;
+  background: #fae9eb;
+  color: var(--pink);
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  font-size: 25px;
+}
 
-            table {
-                font-size: 13px;
-            }
+.education-card h3 {
+  font-size: 18px;
+}
 
-            th, td {
-                padding: 8px;
-            }
-        }
-    </style>
+.education-card p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.edu-year {
+  margin-left: auto;
+  background: #fae9eb;
+  color: #a75f70;
+  padding: 8px 13px;
+  border-radius: 20px;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.projects-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.project-card {
+  padding: 30px;
+}
+
+.project-top {
+  display: flex;
+  justify-content: space-between;
+  color: var(--pink);
+  margin-bottom: 25px;
+}
+
+.project-number {
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.project-symbol {
+  font-size: 28px;
+}
+
+.project-type {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 7px 12px;
+  border-radius: 20px;
+  background: #fae9eb;
+  color: #a75f70;
+  font-size: 10px;
+}
+
+.goals-panel {
+  background: #503a41;
+  color: white;
+  padding: 55px;
+  border-radius: 25px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+.goals-panel h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 43px;
+  line-height: 1.2;
+  margin: 15px 0;
+}
+
+.goals-panel p {
+  color: #e8d8dc;
+  font-size: 14px;
+}
+
+.goal-list {
+  list-style: none;
+}
+
+.goal-list li {
+  padding: 13px 0;
+  border-bottom: 1px solid #765d65;
+  font-size: 13px;
+}
+
+.goal-list li::before {
+  content: "✿";
+  color: #e6a6b4;
+  margin-right: 12px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.contact-card, .contact-form {
+  background: white;
+  border: 1px solid #f0dfe1;
+  border-radius: 20px;
+  padding: 35px;
+}
+
+.contact-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 29px;
+  margin: 15px 0;
+}
+
+.contact-card p {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.email-link {
+  color: var(--pink);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.field {
+  margin-bottom: 17px;
+}
+
+.field label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 7px;
+}
+
+.field input, .field textarea {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #ead8dc;
+  background: #fffaf9;
+  border-radius: 10px;
+  outline: none;
+  font: inherit;
+  font-size: 13px;
+}
+
+.field input:focus, .field textarea:focus {
+  border-color: var(--pink);
+}
+
+.field textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+footer {
+  padding: 35px 0;
+  background: var(--dark);
+  color: white;
+  text-align: center;
+}
+
+footer strong {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+}
+
+footer p {
+  color: #e5cfd4;
+  font-size: 12px;
+  margin-top: 7px;
+}
+
+.back-top {
+  display: inline-block;
+  margin-top: 15px;
+  color: #efb7c3;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+@media (max-width: 850px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-button {
+    display: none;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 76px;
+    left: 0;
+    width: 100%;
+    padding: 20px 5%;
+    background: var(--cream);
+    flex-direction: column;
+    gap: 15px;
+    border-bottom: 1px solid #f0dfe1;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .hero-card, .about-grid, .goals-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-copy {
+    text-align: center;
+  }
+
+  .hero-lead {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .portrait-wrap {
+    margin-top: 15px;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-art {
+    min-height: 250px;
+  }
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: 65px 0;
+  }
+
+  .skills-grid, .projects-grid, .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .education-card {
+    flex-wrap: wrap;
+  }
+
+  .edu-year {
+    margin-left: 75px;
+  }
+
+  .goals-panel {
+    padding: 30px;
+  }
+
+  .goals-panel h2 {
+    font-size: 35px;
+  }
+
+  .logo {
+    font-size: 19px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-    <header id="home">
-        <h1>Shai's Creative Journey</h1>
-        <p class="tagline">Where creativity meets technology.</p>
-        <p>Aspiring AI Engineer | UI/UX Designer</p>
-    </header>
+<header>
+  <nav class="container">
+    <a class="logo" href="#home">Shai’s Creative Journey<span> ✳</span></a>
 
-    <nav>
-        <a href="#about">About Me</a>
-        <a href="#skills">Skills</a>
-        <a href="#education">Education</a>
-        <a href="#projects">Projects</a>
-        <a href="#goals">Career Goals</a>
-        <a href="#contact">Contact</a>
-    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
 
-    <main>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#goals">Goals</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
 
-        <section id="about">
-            <h2>About Me</h2>
+    <a class="nav-button" href="#contact">Let's connect ↗</a>
+  </nav>
+</header>
 
-            <img
-                src="formal pic coloma.jpg"
-                alt="Formal portrait of Shaina Reign M. Coloma"
-                class="profile-image"
-            >
+<main id="home">
 
-            <h3 class="profile-name">Shaina Reign M. Coloma</h3>
+<section class="hero">
+  <div class="container hero-card">
 
-            <p>
-                Hello! My name is Shaina Reign M. Coloma, and I am an
-                Information Technology student at National University Fairview.
-                I am interested in technology, creativity, and designing
-                meaningful digital experiences.
-            </p>
+    <div class="hero-copy">
+      <span class="eyebrow">IT Student</span>
 
-            <p>
-                I enjoy learning new things, exploring different ideas,
-                and improving my skills in programming and design.
-                I believe that every project is an opportunity to grow
-                and discover something new.
-            </p>
+      <h1>Hello, I'm<br><em>Shaina.</em></h1>
 
-            <p>
-                My goal is to combine creativity and technology to create
-                useful, accessible, and user-friendly solutions.
-            </p>
-        </section>
+      <p class="hero-lead">
+        I love bringing thoughtful ideas to life through technology,
+        design, and meaningful digital experiences.
+      </p>
 
-        <section id="skills">
-            <h2>My Skills</h2>
+      <div class="hero-actions">
+        <a class="button" href="#projects">Explore My Work ↗</a>
+        <a class="button secondary" href="#about">Get to Know Me</a>
+      </div>
 
-            <h3>Technical Skills</h3>
+      <p class="hero-note">
+        ASPIRING WEB DEVELOPER · UI/UX DESIGNER · FUTURE AI ENGINEER
+      </p>
+    </div>
 
-            <div class="skill-tags">
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>JavaScript</span>
-                <span>Python</span>
-                <span>Java</span>
-                <span>SQL</span>
-                <span>Figma</span>
-                <span>Git</span>
-            </div>
+    <div class="portrait-wrap">
 
-            <br>
+      <div class="portrait-frame">
+        <div class="portrait-inner">
 
-            <h3>Personal Skills</h3>
+          <!-- CORRECT IMAGE PATH -->
+          <img
+            src="./formal%20pic%20coloma.jpg"
+            alt="Shaina Reign M. Coloma"
+            loading="eager"
+          >
 
-            <ul class="skill-list">
-                <li>Creative and detail-oriented</li>
-                <li>Organized and responsible</li>
-                <li>Problem-solving</li>
-                <li>Willingness to learn and adapt</li>
-                <li>Able to work under pressure</li>
-            </ul>
-        </section>
+        </div>
+      </div>
 
-        <section id="education">
-            <h2>Educational Background</h2>
+      <div class="floating-label">
+        A little bit of creativity ♡
+      </div>
 
-            <table>
-                <tr>
-                    <th>Institution</th>
-                    <th>Course</th>
-                    <th>Year Level</th>
-                </tr>
+    </div>
 
-                <tr>
-                    <td>National University Fairview</td>
-                    <td>Bachelor of Science in Information Technology</td>
-                    <td>Second Year</td>
-                </tr>
-            </table>
-        </section>
+  </div>
+</section>
 
-        <section id="projects">
-            <h2>My Projects</h2>
+<section class="section" id="about">
+  <div class="container about-grid">
 
-            <div class="project-card">
-                <h3>1. Movie Playlist</h3>
+    <div class="about-art">
+      <span class="art-label">A Little Introduction</span>
+      <strong>Curious by nature. Creative by heart.</strong>
+    </div>
 
-                <p>
-                    The Movie Playlist is a website concept that allows
-                    users to browse and organize their favorite movies.
-                    It aims to make discovering and keeping track of movies
-                    easier and more convenient.
-                </p>
+    <div class="about-copy">
 
-                <p>
-                    This project helped me practice creating an organized
-                    and user-friendly website.
-                </p>
-            </div>
+      <div class="section-heading" style="text-align:left;margin:0">
+        <span class="eyebrow">Get to Know Me</span>
+        <h2>More Than Just a Student.</h2>
+      </div>
 
-            <div class="project-card">
-                <h3>2. Room Reservation System</h3>
+      <p>
+        Hello! I'm <strong>Shaina Reign M. Coloma</strong>,
+        an Information Technology student at National University Fairview.
+        I'm interested in technology, creativity, and designing meaningful
+        digital experiences.
+      </p>
 
-                <p>
-                    The Room Reservation System is a proposed system
-                    designed to help students and teachers reserve
-                    available rooms more conveniently.
-                </p>
+      <p>
+        I enjoy learning new things, exploring different ideas,
+        and improving my skills in programming and design.
+        I believe every project is an opportunity to grow.
+      </p>
 
-                <p>
-                    It aims to reduce paperwork, prevent scheduling
-                    conflicts, and make reservation requests easier
-                    to manage. Administrators can review and approve
-                    reservation requests through the system.
-                </p>
-            </div>
+      <p>
+        My goal is to combine creativity and technology to create
+        useful, accessible, and user-friendly solutions.
+      </p>
 
-            <div class="project-card">
-                <h3>3. Baking Recipe Website</h3>
+      <a class="button secondary" href="#skills">Discover My Skills ↗</a>
 
-                <p>
-                    The Baking Recipe Website is a project inspired
-                    by my personal interest in baking. It provides
-                    an organized collection of recipes for different
-                    baked goods and pastries.
-                </p>
+    </div>
+  </div>
+</section>
 
-                <p>
-                    This project combines my creativity and interest
-                    in baking with my growing knowledge of web development.
-                </p>
-            </div>
-        </section>
+<section class="section soft-section" id="skills">
+  <div class="container">
 
-        <section id="goals">
-            <h2>My Career Goals</h2>
+    <div class="section-heading">
+      <span class="eyebrow">What I Bring</span>
+      <h2>My Skills & Strengths</h2>
+      <p>A growing toolkit shaped by curiosity, practice, and a love for creating.</p>
+    </div>
 
-            <p>
-                I want to continue developing my skills and explore
-                different opportunities in the technology industry.
-                My future career goals include:
-            </p>
+    <div class="skills-grid">
 
-            <ol class="goals-list">
-                <li>Become a professional Web Developer.</li>
-                <li>Grow as a UI/UX Designer.</li>
-                <li>Explore opportunities as a Prompt Engineer.</li>
-                <li>Continue learning about Artificial Intelligence.</li>
-                <li>Improve my communication skills and connect with
-                    other people in the technology industry.</li>
-            </ol>
-        </section>
+      <article class="skill-card">
+        <div class="skill-icon">⌘</div>
+        <h3>Web Development</h3>
+        <p>Building clean, structured, and responsive web experiences.</p>
+      </article>
 
-        <section id="contact">
-            <h2>Contact Me</h2>
+      <article class="skill-card">
+        <div class="skill-icon">✎</div>
+        <h3>UI/UX Design</h3>
+        <p>Creating layouts that focus on usability and user-friendly interfaces.</p>
+      </article>
 
-            <p>
-                Thank you for visiting my portfolio!
-                Feel free to contact me through my email.
-            </p>
+      <article class="skill-card">
+        <div class="skill-icon">✧</div>
+        <h3>Creative Thinking</h3>
+        <p>Turning ideas into thoughtful concepts and visual solutions.</p>
+      </article>
 
-            <div class="contact-info">
-                <p>
-                    <strong>Email:</strong>
-                    <a href="mailto:shainarmc@gmail.com">
-                        shainarmc@gmail.com
-                    </a>
-                </p>
-            </div>
+      <article class="skill-card">
+        <div class="skill-icon">◇</div>
+        <h3>Problem Solving</h3>
+        <p>Approaching challenges with patience and curiosity.</p>
+      </article>
 
-            <form action="mailto:shainarmc@gmail.com"
-                  method="post"
-                  enctype="text/plain">
+    </div>
 
-                <h3>Send Me a Message</h3>
+    <div class="tag-cloud">
+      <span class="tag">HTML</span>
+      <span class="tag">CSS</span>
+      <span class="tag">JavaScript</span>
+      <span class="tag">Python</span>
+      <span class="tag">Java</span>
+      <span class="tag">SQL</span>
+      <span class="tag">Figma</span>
+      <span class="tag">Git</span>
+      <span class="tag">Detail-oriented</span>
+      <span class="tag">Organized</span>
+      <span class="tag">Adaptable</span>
+      <span class="tag">Teamwork</span>
+    </div>
 
-                <label for="name">Your Name</label>
-                <input
-                    type="text"
-                    id="name"
-                    name="Name"
-                    placeholder="Enter your name"
-                    required
-                >
+  </div>
+</section>
 
-                <label for="email">Your Email</label>
-                <input
-                    type="email"
-                    id="email"
-                    name="Email"
-                    placeholder="Enter your email"
-                    required
-                >
+<section class="section" id="education">
+  <div class="container">
 
-                <label for="message">Your Message</label>
-                <textarea
-                    id="message"
-                    name="Message"
-                    rows="5"
-                    placeholder="Write your message here..."
-                    required
-                ></textarea>
+    <div class="section-heading">
+      <span class="eyebrow">My Learning Journey</span>
+      <h2>Education</h2>
+      <p>Every lesson is another step toward the future I'm building.</p>
+    </div>
 
-                <button type="submit">Send Message ♡</button>
-            </form>
-        </section>
+    <article class="education-card">
 
-    </main>
+      <div class="edu-mark">✿</div>
 
-    <footer>
-        <h2>Thank You for Visiting!</h2>
+      <div>
+        <h3>National University Fairview</h3>
+        <p>Bachelor of Science in Information Technology</p>
+      </div>
 
-        <h3>Everything in its own time. ♡</h3>
+      <span class="edu-year">Second Year</span>
 
-        <p>© 2026 Shaina Reign M. Coloma</p>
+    </article>
+
+  </div>
+</section>
+
+<section class="section soft-section" id="projects">
+  <div class="container">
+
+    <div class="section-heading">
+      <span class="eyebrow">Things I've Created</span>
+      <h2>Some of My Projects</h2>
+      <p>A few concepts and class projects where I've explored problem-solving and web design.</p>
+    </div>
+
+    <div class="projects-grid">
+
+      <article class="project-card">
+        <div class="project-top">
+          <span class="project-number">01</span>
+          <span class="project-symbol">▤</span>
+        </div>
+        <h3>Movie Playlist</h3>
+        <p>A website concept that helps users browse and organize their favorite movies.</p>
+        <span class="project-type">Website Concept</span>
+      </article>
+
+      <article class="project-card">
+        <div class="project-top">
+          <span class="project-number">02</span>
+          <span class="project-symbol">⌂</span>
+        </div>
+        <h3>Room Reservation System</h3>
+        <p>A proposed system for reserving rooms and helping prevent scheduling conflicts.</p>
+        <span class="project-type">System Proposal</span>
+      </article>
+
+      <article class="project-card">
+        <div class="project-top">
+          <span class="project-number">03</span>
+          <span class="project-symbol">♡</span>
+        </div>
+        <h3>Baking Recipe Website</h3>
+        <p>A recipe collection featuring pastries and baked goods in an organized website.</p>
+        <span class="project-type">Website Concept</span>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" id="goals">
+  <div class="container">
+
+    <div class="goals-panel">
+
+      <div>
+        <span class="eyebrow">Looking Ahead</span>
+        <h2>Dream Big.<br>Keep Growing.</h2>
+        <p>
+          I'm excited to keep learning, create meaningful work,
+          and find my place in the technology industry.
+        </p>
+      </div>
+
+      <ul class="goal-list">
+        <li>Become a professional Web Developer</li>
+        <li>Grow as a UI/UX Designer</li>
+        <li>Explore opportunities as a Prompt Engineer</li>
+        <li>Continue learning about Artificial Intelligence</li>
+        <li>Build communication skills and industry connections</li>
+      </ul>
+
+    </div>
+  </div>
+</section>
+
+<section class="section soft-section" id="contact">
+  <div class="container">
+
+    <div class="section-heading">
+      <span class="eyebrow">Say Hello</span>
+      <h2>Let's Create Something Meaningful.</h2>
+      <p>Have a question, an idea, or an opportunity? I'd be happy to hear from you.</p>
+    </div>
+
+    <div class="contact-grid">
+
+      <div class="contact-card">
+        <span class="eyebrow">Get in Touch</span>
+        <h3>I'd Love to Connect With You.</h3>
 
         <p>
-            <a href="#home">Back to Top ↑</a>
+          Thank you for taking the time to explore my portfolio.
+          Feel free to reach out through email.
         </p>
-    </footer>
+
+        <a class="email-link" href="mailto:shainarmc@gmail.com">
+          shainarmc@gmail.com ↗
+        </a>
+      </div>
+
+      <form class="contact-form" id="contactForm">
+
+        <div class="field">
+          <label for="name">Your Name</label>
+          <input id="name" type="text" placeholder="Your name" required>
+        </div>
+
+        <div class="field">
+          <label for="email">Your Email</label>
+          <input id="email" type="email" placeholder="you@example.com" required>
+        </div>
+
+        <div class="field">
+          <label for="message">Your Message</label>
+          <textarea id="message" placeholder="Write your message here..." required></textarea>
+        </div>
+
+        <button class="button" type="submit">Send a Message ♡</button>
+
+      </form>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <strong>Shai's Creative Journey</strong>
+    <p>Where creativity meets technology. ♡</p>
+    <p>© 2026 Shaina Reign M. Coloma · Made with care</p>
+    <a class="back-top" href="#home">Back to Top ↑</a>
+  </div>
+</footer>
+
+<script>
+
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+
+menuToggle.addEventListener('click', () => {
+  const isOpen = navLinks.classList.toggle('open');
+  menuToggle.textContent = isOpen ? '✕' : '☰';
+  menuToggle.setAttribute('aria-expanded', String(isOpen));
+});
+
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    menuToggle.textContent = '☰';
+    menuToggle.setAttribute('aria-expanded', 'false');
+  });
+});
+
+document.getElementById('contactForm').addEventListener('submit', event => {
+  event.preventDefault();
+
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const message = document.getElementById('message').value;
+
+  const recipient = 'shainarmc@gmail.com';
+
+  const subject = encodeURIComponent(
+    'Portfolio Message from ' + name
+  );
+
+  const body = encodeURIComponent(
+    'Name: ' + name +
+    '\nEmail: ' + email +
+    '\n\nMessage:\n' + message
+  );
+
+  window.location.href =
+    'mailto:' + recipient +
+    '?subject=' + subject +
+    '&body=' + body;
+});
+
+</script>
 
 </body>
 </html>
